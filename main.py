@@ -60,11 +60,13 @@ def play(option):
             defeat()
         else:
             victory()
-    elif(croupier==player):
+    elif(croupier==player): #Same points
             if(i<j):
-                defeat()
+                defeat() #Croupier less cards
+            elif(j<i):
+                victory() # Player less cards
             else:
-                victory()
+                defeat() #Same points && Same2 cards
     else:
         print(" Fatal error")
 
@@ -93,6 +95,7 @@ def turn():
         return False
     else:
         print("Elija una opción válida!")
+        return turn()
 def victory():
     print("*--------*")
     print("|VICTORIA|")
